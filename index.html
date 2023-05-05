@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Stop Watch</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Mono:wght@300;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="clock">
+                    <svg viewBox="0 0 120 120" width="300" height="300">
+                        <g transform="translate(60 60)">
+                            <circle
+                                cx="0"
+                                cy="0"
+                                r="45"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="5"
+                                stroke-dasharray="1 calc(2 * 3.14159 * 45.0 / 12 - 1)"
+                                style="transform: rotate(-0.01111rad)"
+                            ></circle>
+                            <circle
+                                cx="0"
+                                cy="0"
+                                r="46.5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-dasharray=".5 calc(2 * 3.14159 * 46.5 / 60 - .5)"
+                                style="transform: rotate(-0.005376rad)"
+                            ></circle>
+                            <g id="dial-hand">
+                                <g transform="translate(0 -52)">
+                                    <path
+                                        d="M -2.25 0 h 4.5 l -2.25 2.5 l -2.25 -2.5"
+                                        fill="currentColor"
+                                        stroke="currentColor"
+                                        stroke-width="1"
+                                        stroke-linejoin="round"
+                                        stroke-linecap="round"
+                                    ></path>
+                                </g>
+                            </g>
+                            <text
+                                id="time-text"
+                                text-anchor="middle"
+                                fill="currentColor"
+                                dominant-baseline="central"
+                                font-size="10"
+                                style="font-weight: 300; letter-spacing: 1px"
+                            >
+                                00:00.00
+                            </text>
+                        </g>
+                    </svg>
+                    <form>
+                        <button type="button" id="start-button">Start</button>
+                        <div id="lap-pause" class="group hidden">
+                            <button type="button" class="left-button">
+                                Lap
+                            </button>
+                            <button type="button" class="right-button">
+                                Pause
+                            </button>
+                        </div>
+                        <div id="reset-cont" class="group hidden">
+                            <button type="button" class="left-button">
+                                Reset
+                            </button>
+                            <button type="button" class="right-button">
+                                Continue
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <aside>
+                    <ul id="laps"></ul>
+                </aside>
+            </div>
+        </main>
+        <script type="module" src="index.js" charset="uft-8"></script>
+    </body>
+</html>
