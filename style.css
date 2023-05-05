@@ -123,6 +123,16 @@ ul li .lap-info {
     border-bottom: 1px solid rgba(var(--text-color), 0.2);
 }
 
+.lap-time {
+    position: relative;
+}
+
+.lap-time::before {
+    content: '+';
+    left: -1em;
+    position: absolute;
+}
+
 @media (max-width: 600px) {
     main {
         padding: 1em;
