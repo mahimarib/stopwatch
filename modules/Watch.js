@@ -1,9 +1,7 @@
 import DialHand from './DialHand.js';
 import Timer from './Timer.js';
 import timerText from './TimerText.js';
-import createLap from './createLap.js';
 import createLapsDial from './createLapsDial.js';
-import initLapsContainer from './initLapsContainer.js';
 
 function StopWatch() {
     const mainTimer = new Timer();
@@ -46,18 +44,13 @@ function StopWatch() {
                 lapsDial.rotateToSeconds(lapsTimer.getSeconds())
             );
             laps.push(mainTimer.getElapsed());
-            initLapsContainer();
         } else {
             laps.push(lapsTimer.getElapsed());
             lapsTimer.reset();
         }
-        createLap(laps.length, mainTimer.getElapsed(), laps[laps.length - 1]);
     };
 
     this.reset = () => {
-        document
-            .querySelector('main .container')
-            .classList.remove('side-by-side');
         timerText.resetText();
         dialHand.resetTransition();
         mainTimer.reset();
