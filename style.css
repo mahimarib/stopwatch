@@ -28,13 +28,28 @@ main {
 .container {
     width: 100%;
     max-width: 400px;
+    display: grid;
+    row-gap: 3em;
+    position: relative;
+    grid-template-rows: 50vh;
+}
+
+.side-by-side {
+    max-width: 800px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.clock {
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    align-items: stretch;
+    transition: right;
 }
 
 form {
-    padding: 0 2em;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 form .group {
@@ -45,11 +60,11 @@ form .group {
 
 button {
     font-family: 'Inter', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.2em;
     letter-spacing: 1px;
     display: block;
     margin: 0;
-    padding: 1em;
+    padding: 0.5em 1em;
     width: 100%;
     background-color: transparent;
     border: 1px solid currentColor;
@@ -75,8 +90,16 @@ button:hover {
     border-radius: 50px;
 }
 
+.hidden {
+    display: none;
+}
+
 form .hidden {
     display: none;
+}
+
+aside {
+    overflow: scroll;
 }
 
 svg {
@@ -86,6 +109,18 @@ svg {
 
 svg text {
     font-family: 'Roboto Mono', monospace;
+}
+
+ul {
+    list-style: none;
+    font-family: 'Roboto Mono', monospace;
+    padding: 0 2em;
+}
+
+ul li .lap-info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(var(--text-color), 0.2);
 }
 
 @media (max-width: 600px) {
