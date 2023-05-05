@@ -3,6 +3,7 @@ import Timer from './Timer.js';
 import timerText from './TimerText.js';
 import createLap from './createLap.js';
 import createLapsDial from './createLapsDial.js';
+import currentLap from './currLap.js';
 import initLapsContainer from './initLapsContainer.js';
 
 function StopWatch() {
@@ -52,6 +53,7 @@ function StopWatch() {
             lapsTimer.reset();
         }
         createLap(laps.length, mainTimer.getElapsed(), laps[laps.length - 1]);
+        currentLap.updateLapNum(laps.length + 1);
     };
 
     this.reset = () => {
@@ -73,6 +75,8 @@ function StopWatch() {
     this.updateTimer = () => {
         timerText.updateText(mainTimer.toString());
         dialHand.rotateToSeconds(mainTimer.getSeconds());
+        currentLap.updateElapsed(mainTimer.getElapsed());
+        currentLap.updateLap(lapsTimer.getElapsed());
     };
 }
 
