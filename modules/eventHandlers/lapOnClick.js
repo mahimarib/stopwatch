@@ -1,4 +1,4 @@
-import watch from '../StopWatch.js';
+import watch from '../Watch.js';
 
 export default function lapOnClick() {
     watch.lap();

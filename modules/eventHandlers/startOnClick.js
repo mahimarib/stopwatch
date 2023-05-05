@@ -1,5 +1,5 @@
 import { lapPauseGroup, startButton } from '../../index.js';
-import watch from '../StopWatch.js';
+import watch from '../Watch.js';
 
 export default function startOnClick() {
     watch.startTimer();
