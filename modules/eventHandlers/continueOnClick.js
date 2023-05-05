@@ -1,5 +1,5 @@
 import { lapPauseGroup, resetContGroup } from '../../index.js';
-import watch from '../stopwatch.js';
+import watch from '../StopWatch.js';
 
 export default function continueOnClick() {
     watch.continue();
