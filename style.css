@@ -99,7 +99,8 @@ form .hidden {
 }
 
 aside {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 svg {
@@ -121,6 +122,16 @@ ul li .lap-info {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgba(var(--text-color), 0.2);
+}
+
+.lap-time {
+    position: relative;
+}
+
+.lap-time::before {
+    content: '+';
+    left: -1em;
+    position: absolute;
 }
 
 @media (max-width: 600px) {
