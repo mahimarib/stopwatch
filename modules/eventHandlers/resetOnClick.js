@@ -9,5 +9,4 @@ export default function resetOnClick() {
         .getElementById('laps')
         .querySelectorAll('.lap-info:not(#current-lap)')
         .forEach(e => e.remove());
-    document.querySelector('aside').classList.add('hidden');
 }

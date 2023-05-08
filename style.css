@@ -2,6 +2,7 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    /* outline: 1px solid magenta; */
 }
 
 :root {
@@ -28,22 +29,37 @@ main {
 .container {
     width: 100%;
     max-width: 400px;
-    display: grid;
-    row-gap: 3em;
+    row-gap: 2em;
+    display: flex;
+    justify-content: center;
     position: relative;
-    grid-template-rows: 50vh;
+    overflow: visible;
 }
 
 .side-by-side {
-    max-width: 800px;
-    grid-template-columns: 1fr 1fr;
+}
+
+.container > * {
+    transition: transform 0.5s ease;
 }
 
 .clock {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    transition: right;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    background-color: var(--background-color);
+    z-index: 5;
+    width: 100%;
+}
+
+.side-by-side .clock {
+    transform: translateX(-50%);
+}
+
+.side-by-side aside {
+    transform: translateX(50%);
 }
 
 form {
@@ -100,12 +116,10 @@ form .hidden {
 
 aside {
     overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-svg {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 100%;
+    z-index: -5;
 }
 
 svg text {
@@ -137,5 +151,38 @@ ul li .lap-info {
 @media (max-width: 600px) {
     main {
         padding: 1em;
+    }
+}
+
+@media (max-width: 800px) {
+    main {
+        align-items: start;
+    }
+
+    .side-by-side .clock {
+        transform: unset;
+    }
+
+    .side-by-side aside {
+        transform: translateY(100%);
+    }
+}
+
+@media (min-width: 1800px) {
+    body {
+        font-size: 25px;
+    }
+
+    .container {
+        max-width: 600px;
+    }
+
+    svg {
+        height: 600px;
+        width: 600px;
+    }
+
+    form {
+        max-width: 600px;
     }
 }
