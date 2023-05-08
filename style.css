@@ -122,6 +122,10 @@ aside {
     z-index: 0;
 }
 
+.side-by-side aside::-webkit-scrollbar {
+    display: none;
+}
+
 svg text {
     font-family: 'Roboto Mono', monospace;
 }
