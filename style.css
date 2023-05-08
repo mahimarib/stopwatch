@@ -33,7 +33,6 @@ main {
     display: flex;
     justify-content: center;
     position: relative;
-    overflow: visible;
 }
 
 .side-by-side {
@@ -56,10 +55,6 @@ main {
 
 .side-by-side .clock {
     transform: translateX(-50%);
-}
-
-.side-by-side aside {
-    transform: translateX(50%);
 }
 
 form {
@@ -115,11 +110,16 @@ form .hidden {
 }
 
 aside {
-    overflow-y: scroll;
     position: absolute;
     inset: 0;
     width: 100%;
     z-index: -5;
+}
+
+.side-by-side aside {
+    transform: translateX(50%);
+    overflow: scroll;
+    z-index: 10;
 }
 
 svg text {

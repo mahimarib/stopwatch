@@ -1,9 +1,9 @@
 import convertElapsedTime from './convertElapsedTime.js';
 
-const lapsList = document.getElementById('current-lap');
+const lap = document.querySelector('#laps li:first-of-type');
 
 export default function createLap(lapNum, elapsedTime, lapTime) {
-    lapsList.insertAdjacentHTML(
+    lap.insertAdjacentHTML(
         'afterend',
         `
         <li>
