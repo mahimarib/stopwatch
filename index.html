@@ -25,23 +25,17 @@
                     >
                         <g transform="translate(60 60)">
                             <circle
+                                class="hour-ticks"
                                 cx="0"
                                 cy="0"
                                 r="45"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="5"
-                                stroke-dasharray="1 calc(2 * 3.14159 * 45.0 / 12 - 1)"
-                                style="transform: rotate(-0.01111rad)"
                             ></circle>
                             <circle
+                                class="second-ticks"
                                 cx="0"
                                 cy="0"
                                 r="46.5"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-dasharray=".5 calc(2 * 3.14159 * 46.5 / 60 - .5)"
+                                stroke-dasharray=".5px calc(2 * 3.14159 * 46.5 / 60 - .5)"
                                 style="transform: rotate(-0.005376rad)"
                             ></circle>
                             <g id="dial-hand">
