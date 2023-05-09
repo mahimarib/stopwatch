@@ -7,6 +7,6 @@ export default function resetOnClick() {
     startButton.classList.remove('hidden');
     document
         .getElementById('laps')
-        .querySelectorAll('.lap-info:not(#current-lap)')
+        .querySelectorAll('li:not(:first-of-type)')
         .forEach(e => e.remove());
 }
