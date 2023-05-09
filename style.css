@@ -135,13 +135,18 @@ svg circle {
 
 svg .hour-ticks {
     stroke-width: 5px;
+    /* 1px circumference/12 - 1px  */
+    /* 1px calc(2 * 3.14159 * 45.0 / 12 - 1) */
     stroke-dasharray: 1px 22.561945px;
     transform: rotate(-0.01111rad);
 }
 
 svg .second-ticks {
     stroke-width: 2px;
+    /* 0.5px circumference/60 - 0.5px  */
+    /* 0.5px calc(2 * 3.14159 * 46.5 / 60 - 0.5) */
     stroke-dasharray: 0.5px 4.369469px;
+    transform: rotate(-0.005376rad);
 }
 
 svg text {
